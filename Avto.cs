@@ -20,7 +20,7 @@ namespace _24_practicum
             }
             set
             {
-                if (String.IsNullOrEmpty(value))
+                if (value=="")
                     model = "ПУСТОЕ ЗНАЧЕНИЕ MODEL";
                 else
                 {
@@ -36,7 +36,7 @@ namespace _24_practicum
             }
             set
             {
-                if (String.IsNullOrEmpty(value))
+                if (value=="")
                     color = "ПУСТОЕ ЗНАЧЕНИЕ COLOR";
                 else
                 {
