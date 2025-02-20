@@ -8,19 +8,24 @@ namespace _24_practicum
 {
     class Avto
     {
-        private string brand;
+        private string model;
         private string color;
         private int skor;
 
-        public string Brand
+        public string Model
         {
             get
             {
-                return brand;
+                return model;
             }
             set
             {
-                brand = value;
+                if (String.IsNullOrEmpty(value))
+                    model = "ПУСТОЕ ЗНАЧЕНИЕ MODEL";
+                else
+                {
+                    model = value;
+                }
             }
         }
         public string Color
@@ -31,9 +36,31 @@ namespace _24_practicum
             }
             set
             {
-                color = value;
+                if (String.IsNullOrEmpty(value))
+                    color = "ПУСТОЕ ЗНАЧЕНИЕ COLOR";
+                else
+                {
+                    color = value;
+                }
             }
         }
+
+        //public string Color
+        //{
+        //    get
+        //    {
+        //        return color;
+        //    }
+        //    set
+        //    {
+        //        if (String.IsNullOrEmpty(value))
+        //            color = "ПУСТОЕ ЗНАЧЕНИЕ COLOR";
+        //        else
+        //        {
+        //            color = value;
+        //        }
+        //    }
+        //}
         public int Skor
         {
             get
@@ -42,13 +69,13 @@ namespace _24_practicum
             }
             set
             {
-                if (value < 20)
+                if (value < 60)
                 {
-                    skor = 20;
+                    skor = 60;
                 }
-                else if (value > 120)
+                else if (value > 150)
                 {
-                    skor = 120;
+                    skor = 150;
                 }
                 else
                 {
@@ -60,15 +87,15 @@ namespace _24_practicum
         {
 
         }
-        public Avto(string brand, string color, int skor)
+        public Avto(string model, string color, int skor)
         {
-            this.brand = brand;
+            this.model = model;
             this.color = color;
             this.skor = skor;
         }
         public override string ToString()
         {
-            return $"марка: {brand}, цвет: {color}, скорость: {skor}";
+            return $"модель: {model}, цвет: {color}, скорость: {skor}";
         }
     }
 }
